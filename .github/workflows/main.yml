@@ -15,7 +15,7 @@ jobs:
               run: docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.WEB_APP_PASSWORD}}
             
             - name: "Building WebApp docker image"
-              run: docker build ${{ secrets.DOCKER_HUB_USERNAME }}/my-webapp .
+              run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/my-webapp .
             
             - name: "Pushing to Docker hub"
               run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-webapp
